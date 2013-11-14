@@ -7,6 +7,6 @@ namespace OOPA
 {
     public class Node
     {
-        Values value = Values.NONE;
+        bool? value;
     }
 }

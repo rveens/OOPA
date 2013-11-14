@@ -32,9 +32,6 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Node.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="value" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="OOPA.Input">
     <Position X="5.25" Y="3.25" Width="1.5" />
@@ -102,12 +99,5 @@
       <FileName>NorNode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="OOPA.Values">
-    <Position X="7.75" Y="1" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAgAAAAAgAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Values.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
