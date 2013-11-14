@@ -5,8 +5,18 @@ using System.Text;
 
 namespace OOPA
 {
-    public class Node
+    public class Node : ICloneable
     {
         Values value = Values.NONE;
+
+        public Node()
+        {
+
+        }
+
+        public Node Clone()
+        {
+            return new Node();
+        }
     }
 }
