@@ -5,8 +5,7 @@ using System.Text;
 
 namespace OOPA
 {
-    public enum Values
+    public class Circuit
     {
-        NONE = -1, LOW, HIGH
     }
 }

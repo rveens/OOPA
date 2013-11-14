@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OOPA.Factory;
 
 namespace OOPA
 {
-    public class Node : ICloneable
+    public abstract class Node : ICloneable, Factory.IGetKey<String>
     {
-        Values value = Values.NONE;
+        private bool? value;
 
         public Node()
         {
 
         }
 
-        public Node Clone()
-        {
-            return new Node();
-        }
+        public abstract Node Clone();
+        public abstract String getKey();
     }
 }
