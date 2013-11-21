@@ -7,6 +7,18 @@ namespace OOPA
 {
     public class AndNode : LogicNode
     {
+        public AndNode()
+        {
 
+        }
+
+        public Node Clone()
+        {
+            return new AndNode();
+        }
+        public String getKey()
+        {
+            return "AND";
+        }
     }
 }
