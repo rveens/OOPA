@@ -7,7 +7,6 @@ namespace OOPA
 {
     public class Input : Node
     {
-        List<Node> outputs;
-
+        private List<Node> outputs;
     }
 }

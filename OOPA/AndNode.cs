@@ -7,5 +7,6 @@ namespace OOPA
 {
     public class AndNode : LogicNode
     {
+
     }
 }
