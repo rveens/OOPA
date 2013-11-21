@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="IO\Parsing\Exceptions\CircuitFileNotFoundException.cs" />
     <Compile Include="IO\Parsing\CircuitFileParser.cs" />
+    <Compile Include="IO\Parsing\Exceptions\CircuitFileSyntaxException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

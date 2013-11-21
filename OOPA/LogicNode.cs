@@ -7,8 +7,17 @@ namespace OOPA
 {
     public abstract class LogicNode : Node
     {
-        List<Node> outputs;
+        protected List<Node> outputs;
+        protected int propegationDelay;
 
-        int propegationDelay;
+        public override void SetValue(bool? newValue)
+        {
+            if (lastValue == null)
+                this.lastValue = newValue;
+            else {
+                this.value = newValue;
+                // TODO nieuwe setvalue aanroepen?
+            }
+        }
     }
 }

@@ -7,5 +7,7 @@ namespace OOPA
 {
     public class Circuit
     {
+        private List<Input> inputs;
+        private List<Probe> probes;
     }
 }
