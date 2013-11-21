@@ -55,7 +55,8 @@ namespace Parser.IO.Parsing
 
             ParseNodes(filePath, out parsedNodes, out parsedEdges);
 
-            BuildNodes(parsedNodes, parsedEdges);
+            /* List<Node> nodes = new List<Node>(); */
+            /* nodes = */ BuildNodes(parsedNodes);
         }
 
 
@@ -125,9 +126,19 @@ namespace Parser.IO.Parsing
             }
         }
 
-        private static void BuildNodes(List<string> parsedNodes, List<string> parsedEdges)
+        private static void /* List<Node> */ BuildNodes(List<string> parsedNodes)
         {
-            //TODO: Build all nodes here and fix the coupling between them to build the entire circuit.
+            //TODO: Build all nodes here...
+
+            for (int index = 0; index < parsedNodes.Count; index++)
+            {
+                //TODO: Build a list of nodes and return them.
+            }
+        }
+
+        private static void CoupleNodes(/*List<Node> nodes, */ List<string> parsedEdges)
+        {
+            //TODO: Fix the coupling between the built nodes, to complete building the entire circuit.
         }
     }
 }
