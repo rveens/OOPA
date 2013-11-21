@@ -7,5 +7,18 @@ namespace OOPA
 {
     public class NotNode : LogicNode
     {
+        public NotNode()
+        {
+
+        }
+
+        public Node Clone()
+        {
+            return new NotNode();
+        }
+        public String getKey()
+        {
+            return "NOT";
+        }
     }
 }

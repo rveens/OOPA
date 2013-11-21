@@ -7,5 +7,18 @@ namespace OOPA
 {
     public class XorNode : LogicNode
     {
+        public XorNode()
+        {
+
+        }
+
+        public Node Clone()
+        {
+            return new XorNode();
+        }
+        public String getKey()
+        {
+            return "XOR";
+        }
     }
 }

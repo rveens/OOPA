@@ -47,45 +47,45 @@
       <FileName>LogicNode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OOPA.AndNode">
+  <Class Name="OOPA.AndNode" Collapsed="true">
     <Position X="0.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>AndNode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OOPA.OrNode">
+  <Class Name="OOPA.OrNode" Collapsed="true">
     <Position X="0.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>OrNode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OOPA.XorNode">
+  <Class Name="OOPA.XorNode" Collapsed="true">
     <Position X="0.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>XorNode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OOPA.NotNode">
+  <Class Name="OOPA.NotNode" Collapsed="true">
     <Position X="0.5" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>NotNode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OOPA.NandNode">
+  <Class Name="OOPA.NandNode" Collapsed="true">
     <Position X="0.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>NandNode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OOPA.NorNode">
+  <Class Name="OOPA.NorNode" Collapsed="true">
     <Position X="0.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>NorNode.cs</FileName>
     </TypeIdentifier>
   </Class>

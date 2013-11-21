@@ -7,5 +7,18 @@ namespace OOPA
 {
     public class NandNode : LogicNode
     {
+        public NandNode()
+        {
+
+        }
+
+        public Node Clone()
+        {
+            return new NandNode();
+        }
+        public String getKey()
+        {
+            return "NAND";
+        }
     }
 }
