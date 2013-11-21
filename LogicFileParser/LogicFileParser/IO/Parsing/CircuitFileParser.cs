@@ -2,6 +2,7 @@
 
 using System;
 using System.IO;
+using System.Linq;
 using System.Collections.Generic;
 
 using Parser.IO.Parsing.Exceptions;
@@ -78,7 +79,7 @@ namespace Parser.IO.Parsing
                 {
                     line++;
 
-                    #region Validate Circuit File-syntax
+                    #region Validate Circuit File's Syntax
 
                     if (currentLine.StartsWith(COMMENT_TAG))
                         continue;
@@ -93,21 +94,34 @@ namespace Parser.IO.Parsing
 
                     if (!currentLine.EndsWith(CODELINE_STOP_TAG))
                         throw new CircuitFileSyntaxException(CLASS_TAG, METHOD_TAG, 
-                                                             ("Expected a " + CODELINE_STOP_TAG + " at the end of line " + line + "."));
+                                                             ("Expected a '" + CODELINE_STOP_TAG + "' at the end of line " + line + "."));
+
+                    if (currentLine.Count(x => x == ':') > 1)
+                        throw new CircuitFileSyntaxException(CLASS_TAG, METHOD_TAG,
+                                                             ("Unexpected '" + PARAM_SPLIT_TAG + "' found at line " + line + "."));
 
                     #endregion
+
+                    #region Process Retrieved Data
+
+                    currentLine = currentLine.Replace(" ", string.Empty)
+                                             .Replace("\t", string.Empty);
 
                     if (nodeType == 0)
                         parsedNodes.Add(currentLine);
                     else
                         parsedEdges.Add(currentLine);
 
+                    #endregion
+
                     Console.WriteLine(currentLine);
                 }
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                Console.WriteLine(e.Message);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(exception.Message);
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 
