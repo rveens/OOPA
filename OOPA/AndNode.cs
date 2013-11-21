@@ -9,14 +9,14 @@ namespace OOPA
     {
         public AndNode()
         {
-
+                
         }
 
-        public Node Clone()
+        public override Object Clone()
         {
             return new AndNode();
         }
-        public String getKey()
+        public override String getKey()
         {
             return "AND";
         }

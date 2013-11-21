@@ -12,11 +12,11 @@ namespace OOPA
 
         }
 
-        public Node Clone()
+        public override Object Clone()
         {
             return new NandNode();
         }
-        public String getKey()
+        public override String getKey()
         {
             return "NAND";
         }

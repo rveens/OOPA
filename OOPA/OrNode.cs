@@ -12,11 +12,12 @@ namespace OOPA
 
         }
 
-        public Node Clone()
+        public override Object Clone()
         {
             return new OrNode();
         }
-        public String getKey()
+
+        public override String getKey()
         {
             return "OR";
         }

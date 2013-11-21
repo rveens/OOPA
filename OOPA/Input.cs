@@ -9,5 +9,18 @@ namespace OOPA
     {
         List<Node> outputs;
 
+        public Input()
+        {
+
+        }
+
+        public override Object Clone()
+        {
+            return new Input();
+        }
+        public override string getKey()
+        {
+            return "INPUT_HIGH";
+        }
     }
 }

@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using OOPA.Factory;
+
 namespace OOPA
 {
     /// <summary>
@@ -23,6 +25,9 @@ namespace OOPA
         public MainWindow()
         {
             InitializeComponent();
+
+            Node test = FactoryMethod<String, Node>.create("AND");
+            return;
         }
     }
 }

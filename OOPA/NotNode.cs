@@ -12,11 +12,11 @@ namespace OOPA
 
         }
 
-        public Node Clone()
+        public override Object Clone()
         {
             return new NotNode();
         }
-        public String getKey()
+        public override String getKey()
         {
             return "NOT";
         }

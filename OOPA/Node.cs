@@ -6,7 +6,7 @@ using OOPA.Factory;
 
 namespace OOPA
 {
-    public abstract class Node : ICloneable, Factory.IGetKey<String>
+    public abstract class Node : ICloneable, IGetKey<String>
     {
         private bool? value;
 
@@ -15,7 +15,7 @@ namespace OOPA
 
         }
 
-        public abstract Node Clone();
+        public abstract Object Clone();
         public abstract String getKey();
     }
 }

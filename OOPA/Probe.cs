@@ -7,6 +7,18 @@ namespace OOPA
 {
     public class Probe : Node
     {
+        public Probe()
+        {
 
+        }
+
+        public override Object Clone()
+        {
+            return new Probe();
+        }
+        public override string getKey()
+        {
+            return "OUTPUT";
+        }
     }
 }
