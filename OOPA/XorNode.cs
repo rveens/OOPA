@@ -12,6 +12,14 @@ namespace OOPA
 
         }
 
+        protected override bool? Calculate(bool? value1, bool? value2)
+        {
+            if (value1.Value && value2.Value)
+                return false;
+
+            return value1 | value2;
+        }
+
         public override Object Clone()
         {
             return new XorNode();

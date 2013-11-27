@@ -8,16 +8,15 @@ namespace OOPA
     public abstract class LogicNode : Node
     {
         protected List<Node> outputs;
+        protected List<bool?> values;
         protected int propegationDelay;
 
         public override void DoAction(bool? newValue)
         {
-            if (lastValue == null)
-                this.lastValue = newValue;
-            else {
-                this.value = newValue;
-                // TODO nieuwe setvalue aanroepen?
-            }
+            values.Add(newValue);
+            if (Calculate())
+                ;
+            //TODO:Roep outputs aan
         }
 
         public void AddOutput(Node n)
@@ -25,5 +24,7 @@ namespace OOPA
             if (n != null)
                 this.outputs.Add(n);
         }
+
+        protected abstract bool Calculate();
     }
 }

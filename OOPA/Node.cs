@@ -9,7 +9,6 @@ namespace OOPA
     public abstract class Node : ICloneable, IGetKey<String>
     {
         protected bool? value;
-        protected bool? lastValue;
 
         public Node()
         {

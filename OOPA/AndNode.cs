@@ -12,6 +12,16 @@ namespace OOPA
                 
         }
 
+        protected override bool Calculate()
+        {
+            if (values.Count == 2)
+            {
+                value = values[1] & values[2];
+                return true;
+            }
+            return false;
+        }
+
         public override Object Clone()
         {
             return new AndNode();
