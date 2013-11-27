@@ -12,7 +12,7 @@ namespace OOPA
 
         }
 
-        public void AddOutput(Node n)
+        public override void AddOutput(Node n)
         {
             // niets
         }

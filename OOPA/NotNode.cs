@@ -12,6 +12,12 @@ namespace OOPA
 
         }
 
+        protected override bool Calculate()
+        {
+            return false;
+            // return !value1;
+        }
+
         public override Object Clone()
         {
             return new NotNode();

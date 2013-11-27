@@ -12,9 +12,10 @@ namespace OOPA
 
         }
 
-        protected override bool? Calculate(bool? value1, bool? value2)
+        protected override bool Calculate()
         {
-            return !(value1 & value2);
+            return false;
+            // return !(value1 & value2);
         }
 
         public override Object Clone()

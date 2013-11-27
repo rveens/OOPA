@@ -19,7 +19,7 @@ namespace OOPA
             //TODO:Roep outputs aan
         }
 
-        public void AddOutput(Node n)
+        public override void AddOutput(Node n)
         {
             if (n != null)
                 this.outputs.Add(n);
