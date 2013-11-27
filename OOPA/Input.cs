@@ -23,5 +23,11 @@ namespace OOPA
         {
             return "INPUT";
         }
+
+        public void AddOutput(Node n)
+        {
+            if (n != null)
+                this.outputs.Add(n);
+        }
     }
 }

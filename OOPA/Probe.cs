@@ -12,6 +12,11 @@ namespace OOPA
 
         }
 
+        public void AddOutput(Node n)
+        {
+            // niets
+        }
+
         public override Object Clone()
         {
             return new Probe();

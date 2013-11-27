@@ -25,5 +25,7 @@ namespace OOPA
             this.value = newValue;
             // TODO nieuwe setvalue aanroepen?
         }
+
+        public abstract void AddOutput(Node n);
     }
 }
