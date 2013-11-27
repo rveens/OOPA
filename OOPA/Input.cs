@@ -13,10 +13,5 @@ namespace OOPA
         {
 
         }
-
-        public override string getKey()
-        {
-            return "INPUT";
-        }
     }
 }

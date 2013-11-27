@@ -10,7 +10,7 @@ namespace OOPA
     {
         public override Object Clone()
         {
-            return new InputLow();
+            return new InputHigh();
         }
 
         public override string getKey()
