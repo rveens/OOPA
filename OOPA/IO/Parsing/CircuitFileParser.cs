@@ -45,7 +45,7 @@ namespace OOPA.IO.Parsing
         /// </summary>
         /// <param name="filePath">The full path of the file to parse.</param>
         /// <returns>Returns the built circuit, parsed from the file.</returns>
-        public static List<Node> Parse(string filePath)
+        public static Dictionary<string, Node> Parse(string filePath)
         {
             const string METHOD_TAG = "Parse";
 
@@ -57,10 +57,10 @@ namespace OOPA.IO.Parsing
 
             ParseNodes(filePath, out parsedNodes, out parsedEdges);
 
-            var nodes = new List<Node>();
+            var nodes = new Dictionary<string, Node>();
             nodes = BuildNodes(parsedNodes);
 
-            CoupleNodes(nodes, parsedEdges);
+            CoupleNodes(ref nodes, parsedEdges);
 
             return nodes;
         }
@@ -116,10 +116,7 @@ namespace OOPA.IO.Parsing
                                              .Replace(";", string.Empty);
 
                     if (nodeType == 0)
-                    {
-                        currentLine = currentLine.Split(':')[1];
                         parsedNodes.Add(currentLine);
-                    }
                     else
                         parsedEdges.Add(currentLine);
 
@@ -136,27 +133,40 @@ namespace OOPA.IO.Parsing
             }
         }
 
-        private static List<Node> BuildNodes(List<string> parsedNodes)
+        private static Dictionary<string, Node> BuildNodes(List<string> parsedNodes)
         {
-            List<Node> nodes = new List<Node>();
+            var nodes = new Dictionary<string, Node>();
 
             for (int index = 0; index < parsedNodes.Count; index++)
             {
-                var node = FactoryMethod<string, Node>.create(parsedNodes[index]);
-                nodes.Add(node);
+                var node = FactoryMethod<string, Node>.create(parsedNodes[index].Split(':')[1]);
+                nodes.Add(parsedNodes[index].Split(':')[0], node);
             }
 
             return nodes;
         }
 
-        private static void CoupleNodes(List<Node> nodes, List<string> parsedEdges)
+        private static void CoupleNodes(ref Dictionary<string, Node> nodes, List<string> parsedEdges)
         {
-            Console.WriteLine("\n*** Node information ***");
-
             for (int index = 0; index < nodes.Count; index++)
-                Console.WriteLine(nodes[index].GetType().ToString());
+            {
+                var currentNodeIndex = parsedEdges[index].Split(':')[0];
+                var splitEdgeParameters = parsedEdges[index].Split(':')[1]
+                                                            .Split(',');
 
-            //TODO: Couple Nodes due parsedEdges parameter data...
+                Node currentNode;
+                if (nodes.TryGetValue(currentNodeIndex, out currentNode))
+                {
+                    #region Couple Nodes Due Parsed Edge Data
+
+                    for (int parameterIndex = 0; parameterIndex < splitEdgeParameters.Length; parameterIndex++)
+                    {
+                        
+                    }
+
+                    #endregion
+                }
+            }
         }
     }
 }
