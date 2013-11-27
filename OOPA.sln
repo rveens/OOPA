@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPA", "OOPA\OOPA.csproj", "{6E9EBAB3-6F76-4513-BDD0-AA36371B3F6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "LogicFileParser\LogicFileParser\Parser.csproj", "{223733F5-F080-46EB-A795-3928FD2CBB63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{6E9EBAB3-6F76-4513-BDD0-AA36371B3F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E9EBAB3-6F76-4513-BDD0-AA36371B3F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E9EBAB3-6F76-4513-BDD0-AA36371B3F6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{223733F5-F080-46EB-A795-3928FD2CBB63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{223733F5-F080-46EB-A795-3928FD2CBB63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{223733F5-F080-46EB-A795-3928FD2CBB63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{223733F5-F080-46EB-A795-3928FD2CBB63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
