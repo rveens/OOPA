@@ -6,6 +6,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using OOPA.IO.Parsing.Exceptions;
+using OOPA.Factory;
 
 #endregion
 
@@ -43,7 +44,8 @@ namespace OOPA.IO.Parsing
         /// Parses a Circuit File and builds a Circuit based on the file's data.
         /// </summary>
         /// <param name="filePath">The full path of the file to parse.</param>
-        public static void /* List<Nodes> */ Parse(string filePath)
+        /// <returns>Returns the built circuit, parsed from the file.</returns>
+        public static List<Node> Parse(string filePath)
         {
             const string METHOD_TAG = "Parse";
 
@@ -55,11 +57,12 @@ namespace OOPA.IO.Parsing
 
             ParseNodes(filePath, out parsedNodes, out parsedEdges);
 
-            /* List<Node> nodes = new List<Node>(); */
-            /* nodes = */
-            BuildNodes(parsedNodes);
+            var nodes = new List<Node>();
+            nodes = BuildNodes(parsedNodes);
 
-            /* return nodes; */
+            CoupleNodes(nodes, parsedEdges);
+
+            return nodes;
         }
 
 
@@ -111,10 +114,12 @@ namespace OOPA.IO.Parsing
                     currentLine = currentLine.Replace(" ", string.Empty)
                                              .Replace("\t", string.Empty)
                                              .Replace(";", string.Empty);
-                    currentLine = currentLine.Split(':')[1];
 
                     if (nodeType == 0)
+                    {
+                        currentLine = currentLine.Split(':')[1];
                         parsedNodes.Add(currentLine);
+                    }
                     else
                         parsedEdges.Add(currentLine);
 
@@ -131,19 +136,27 @@ namespace OOPA.IO.Parsing
             }
         }
 
-        private static void /* List<Node> */ BuildNodes(List<string> parsedNodes)
+        private static List<Node> BuildNodes(List<string> parsedNodes)
         {
-            //TODO: Build all nodes here...
+            List<Node> nodes = new List<Node>();
 
             for (int index = 0; index < parsedNodes.Count; index++)
             {
-                /* Node node = FactoryMethod<string, Node>.create(parsedNodes[index]); */
+                var node = FactoryMethod<string, Node>.create(parsedNodes[index]);
+                nodes.Add(node);
             }
+
+            return nodes;
         }
 
-        private static void CoupleNodes(/* List<Node> nodes, */ List<string> parsedEdges)
+        private static void CoupleNodes(List<Node> nodes, List<string> parsedEdges)
         {
-            //TODO: Fix the coupling between the built nodes, to complete building the entire circuit.
+            Console.WriteLine("\n*** Node information ***");
+
+            for (int index = 0; index < nodes.Count; index++)
+                Console.WriteLine(nodes[index].GetType().ToString());
+
+            //TODO: Couple Nodes due parsedEdges parameter data...
         }
     }
 }

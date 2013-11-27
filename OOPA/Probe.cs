@@ -18,7 +18,7 @@ namespace OOPA
         }
         public override string getKey()
         {
-            return "OUTPUT";
+            return "PROBE";
         }
     }
 }

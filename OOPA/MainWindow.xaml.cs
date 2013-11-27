@@ -1,8 +1,12 @@
-﻿using System.Windows;
+﻿#region Using Statements
+
+using System.Windows;
 using System.Windows.Forms;
 
 using OOPA.Factory;
 using OOPA.IO.Parsing;
+
+#endregion
 
 
 namespace OOPA
@@ -36,6 +40,11 @@ namespace OOPA
 
         #region GUI Event Handlers
 
+        /// <summary>
+        /// Handles clicking the 'Open...' entry in the window's menu.
+        /// </summary>
+        /// <param name="sender">The sender of this event.</param>
+        /// <param name="routedEventArgs">The arguments of this event.</param>
         protected void OnOpenCircuitFile(object sender, RoutedEventArgs routedEventArgs)
         {
             openFileDialog = new OpenFileDialog();
@@ -49,6 +58,11 @@ namespace OOPA
                 CircuitFileParser.Parse(openFileDialog.FileName);
         }
 
+        /// <summary>
+        /// Handles clicking the 'Close' entry in the window's menu.
+        /// </summary>
+        /// <param name="sender">The sender of this event.</param>
+        /// <param name="routedEventArgs">The arguments of this event.</param>
         protected void OnClose(object sender, RoutedEventArgs routedEventArgs)
         {
             System.Windows.Application.Current.Shutdown();
