@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +56,9 @@
     </ApplicationDefinition>
     <Compile Include="Circuit.cs" />
     <Compile Include="Factory\FactoryMethod.cs" />
+    <Compile Include="IO\Parsing\CircuitFileParser.cs" />
+    <Compile Include="IO\Parsing\Exceptions\CircuitFileNotFoundException.cs" />
+    <Compile Include="IO\Parsing\Exceptions\CircuitFileSyntaxException.cs" />
     <Compile Include="NandNode.cs" />
     <Compile Include="NorNode.cs" />
     <Compile Include="NotNode.cs" />

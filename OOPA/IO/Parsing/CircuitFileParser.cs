@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 
-using Parser.IO.Parsing.Exceptions;
+using OOPA.IO.Parsing.Exceptions;
 
 #endregion
 
 
-namespace Parser.IO.Parsing
+namespace OOPA.IO.Parsing
 {
     /// <summary>
     /// Helps parsing Circuit Files to build a circuit.

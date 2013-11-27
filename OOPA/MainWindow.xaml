@@ -1,8 +1,14 @@
 ﻿<Window x:Class="OOPA.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Circuit OOPA" Height="250" Width="300">
     <Grid>
-        
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Open..." Click="OnOpenCircuitFile" />
+                <Separator />
+                <MenuItem Header="Close" Click="OnClose" />
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>
