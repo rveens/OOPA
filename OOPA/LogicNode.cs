@@ -10,7 +10,7 @@ namespace OOPA
         protected List<Node> outputs;
         protected int propegationDelay;
 
-        public override void SetValue(bool? newValue)
+        public override void DoAction(bool? newValue)
         {
             if (lastValue == null)
                 this.lastValue = newValue;

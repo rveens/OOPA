@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OOPA
 {
-    public abstract class Input : Node
+    class InputHigh : Input
     {
-        List<Node> outputs;
-
-        public Input()
+        public override Object Clone()
         {
-
+            return new InputLow();
         }
 
         public override string getKey()
         {
-            return "INPUT";
+            return "INPUT_HIGH";
         }
     }
 }

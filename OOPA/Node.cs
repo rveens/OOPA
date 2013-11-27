@@ -20,7 +20,7 @@ namespace OOPA
         public abstract String getKey();
         
         /* FIXME: methode synchronized maken */
-        public virtual void SetValue(bool? newValue)
+        public virtual void DoAction(bool? newValue)
         {
             this.value = newValue;
             // TODO nieuwe setvalue aanroepen?

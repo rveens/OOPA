@@ -56,6 +56,8 @@
     </ApplicationDefinition>
     <Compile Include="Circuit.cs" />
     <Compile Include="Factory\FactoryMethod.cs" />
+    <Compile Include="InputHigh.cs" />
+    <Compile Include="InputLow.cs" />
     <Compile Include="IO\Parsing\CircuitFileParser.cs" />
     <Compile Include="IO\Parsing\Exceptions\CircuitFileNotFoundException.cs" />
     <Compile Include="IO\Parsing\Exceptions\CircuitFileSyntaxException.cs" />

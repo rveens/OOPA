@@ -3,7 +3,7 @@
   <Class Name="OOPA.Input">
     <Position X="2.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAABA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Input.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -17,7 +17,7 @@
   <Class Name="OOPA.Node">
     <Position X="1.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEgAABAAAAAAAAAAAACAAAAAAAAAAABA=</HashCode>
+      <HashCode>AAAAAAAAAAAAEAAABAAAAAAAAAAIACAAAAAAAAAAABA=</HashCode>
       <FileName>Node.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -44,7 +44,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="OOPA.Probe">
-    <Position X="4.5" Y="3.5" Width="1.5" />
+    <Position X="4.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Probe.cs</FileName>
@@ -60,12 +60,12 @@
   <Class Name="OOPA.LogicNode">
     <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAA=</HashCode>
       <FileName>LogicNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOPA.Circuit">
-    <Position X="7" Y="2" Width="1.5" />
+    <Position X="4.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Circuit.cs</FileName>
@@ -83,6 +83,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAEAAAAAAAEAAAgAAABAAAAAAABAAAAAAAQ=</HashCode>
       <FileName>Factory\FactoryMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPA.InputLow" Collapsed="true">
+    <Position X="2.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>InputLow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPA.InputHigh" Collapsed="true">
+    <Position X="4.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>InputHigh.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="OOPA.Factory.IGetKey&lt;TKey&gt;" Collapsed="true">
