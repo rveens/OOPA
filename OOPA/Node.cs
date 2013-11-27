@@ -10,9 +10,9 @@ namespace OOPA
     {
         protected bool? value;
         protected bool? lastValue;
-        public Node()
-    {
 
+        public Node()
+        {
 
         }
 
