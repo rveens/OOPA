@@ -26,7 +26,7 @@ namespace OOPA
         {
             InitializeComponent();
 
-            Node test = FactoryMethod<String, LogicNode>.create("AND");
+            Node test = FactoryMethod<String, Node>.create("AND");
             Node test1 = FactoryMethod<String, Node>.create("INPUT_HIGH");
             return;
         }

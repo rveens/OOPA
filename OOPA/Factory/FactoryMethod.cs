@@ -51,7 +51,7 @@ namespace OOPA.Factory
 
             foreach (Type type in caType)
             {
-                if (!type.IsPrimitive && type.BaseType == cBaseType)
+                if (!type.IsPrimitive && (type.BaseType == cBaseType || ((type.BaseType != null) && type.BaseType.BaseType == cBaseType)) )
                 {
                     ConstructorInfo[] constructorInfo = type.GetConstructors();
 
