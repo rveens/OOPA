@@ -15,7 +15,7 @@ namespace OOPA
 
         public override string getKey()
         {
-            return "INPUT_HIGH";
+            return "INPUT_LOW";
         }
     }
 }

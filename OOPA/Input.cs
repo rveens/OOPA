@@ -5,13 +5,23 @@ using System.Text;
 
 namespace OOPA
 {
-    public abstract class Input : Node
+    public class Input : Node
     {
         List<Node> outputs;
 
         public Input()
         {
 
+        }
+
+        public override Object Clone()
+        {
+            return new Input();
+        }
+
+        public override string getKey()
+        {
+            return "INPUT";
         }
     }
 }
