@@ -7,7 +7,7 @@ namespace OOPA
 {
     public abstract class LogicNode : Node
     {
-        protected List<Node> outputs;
+        protected List<Node> outputs = new List<Node>();
         protected List<bool?> values;
         protected int propegationDelay;
 
@@ -16,7 +16,6 @@ namespace OOPA
             values.Add(newValue);
             if (Calculate())
                 ;
-            //TODO:Roep outputs aan
         }
 
         public override void AddOutput(Node n)
