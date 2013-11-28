@@ -11,7 +11,7 @@ namespace OOPA
 
         public Input()
         {
-
+            outputs = new List<Node>();
         }
 
         public override void DoAction(bool? newValue)

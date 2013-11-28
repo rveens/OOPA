@@ -65,6 +65,8 @@
     <Compile Include="Nodes\NorNode.cs" />
     <Compile Include="Nodes\NotNode.cs" />
     <Compile Include="Nodes\XorNode.cs" />
+    <Compile Include="IO\Parsing\Exceptions\CoupleNodeNotFoundException.cs" />
+    <Compile Include="IO\Parsing\Exceptions\CurrentNodeNotFoundException.cs" />
     <Compile Include="Visitor.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

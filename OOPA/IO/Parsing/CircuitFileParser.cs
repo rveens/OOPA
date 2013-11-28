@@ -140,7 +140,7 @@ namespace OOPA.IO.Parsing
             for (int index = 0; index < parsedNodes.Count; index++)
             {
                 var node = FactoryMethod<string, Node>.create(parsedNodes[index].Split(':')[1]);
-                nodes.Add(parsedNodes[index].Split(':')[0], node);
+                nodes.Add(parsedNodes[index].Split(':')[0].ToLower(), node);
             }
 
             return nodes;
@@ -148,23 +148,40 @@ namespace OOPA.IO.Parsing
 
         private static void CoupleNodes(ref Dictionary<string, Node> nodes, List<string> parsedEdges)
         {
-            for (int index = 0; index < nodes.Count; index++)
+            for (int index = 0; index < parsedEdges.Count; index++)
             {
-                var currentNodeIndex = parsedEdges[index].Split(':')[0];
+                const string METHOD_TAG = "CoupleNodes";
+
+                var currentNodeIndex = parsedEdges[index].Split(':')[0].ToLower();
                 var splitEdgeParameters = parsedEdges[index].Split(':')[1]
                                                             .Split(',');
 
-                Node currentNode;
-                if (nodes.TryGetValue(currentNodeIndex, out currentNode))
+                try
                 {
+                    Node currentNode;
+                    if (!nodes.TryGetValue(currentNodeIndex, out currentNode))
+                        throw new CurrentNodeNotFoundException(CLASS_TAG, METHOD_TAG,
+                                                               "No 'current' node was found with the key '" + currentNodeIndex + "'!");
+
                     #region Couple Nodes Due Parsed Edge Data
 
                     for (int parameterIndex = 0; parameterIndex < splitEdgeParameters.Length; parameterIndex++)
                     {
-                        
+                        Node coupleNode;
+                        if (!nodes.TryGetValue(splitEdgeParameters[parameterIndex].ToLower(), out coupleNode))
+                            throw new CoupleNodeNotFoundException(CLASS_TAG, METHOD_TAG,
+                                                                  "No 'couple' node was found with the key '" + splitEdgeParameters[parameterIndex] + "'!");
+
+                        currentNode.AddOutput(coupleNode);
                     }
 
                     #endregion
+                }
+                catch (Exception exception)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(exception.Message);
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
             }
         }
