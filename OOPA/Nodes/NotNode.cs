@@ -14,8 +14,8 @@ namespace OOPA
 
         protected override bool Calculate()
         {
-            return false;
-            // return !value1;
+            value = !this.values[0];
+            return true;
         }
 
         public override Object Clone()
