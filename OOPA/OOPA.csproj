@@ -56,25 +56,25 @@
     </ApplicationDefinition>
     <Compile Include="Circuit.cs" />
     <Compile Include="Factory\FactoryMethod.cs" />
-    <Compile Include="InputHigh.cs" />
-    <Compile Include="InputLow.cs" />
+    <Compile Include="Nodes\InputHigh.cs" />
+    <Compile Include="Nodes\InputLow.cs" />
     <Compile Include="IO\Parsing\CircuitFileParser.cs" />
     <Compile Include="IO\Parsing\Exceptions\CircuitFileNotFoundException.cs" />
     <Compile Include="IO\Parsing\Exceptions\CircuitFileSyntaxException.cs" />
-    <Compile Include="NandNode.cs" />
-    <Compile Include="NorNode.cs" />
-    <Compile Include="NotNode.cs" />
-    <Compile Include="XorNode.cs" />
+    <Compile Include="Nodes\NandNode.cs" />
+    <Compile Include="Nodes\NorNode.cs" />
+    <Compile Include="Nodes\NotNode.cs" />
+    <Compile Include="Nodes\XorNode.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AndNode.cs" />
+    <Compile Include="Nodes\AndNode.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Input.cs" />
+    <Compile Include="Nodes\Input.cs" />
     <Compile Include="LogicNode.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -82,9 +82,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Node.cs" />
-    <Compile Include="OrNode.cs" />
-    <Compile Include="Probe.cs" />
+    <Compile Include="Nodes\Node.cs" />
+    <Compile Include="Nodes\OrNode.cs" />
+    <Compile Include="Nodes\Probe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

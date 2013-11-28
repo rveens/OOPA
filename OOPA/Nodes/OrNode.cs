@@ -5,26 +5,31 @@ using System.Text;
 
 namespace OOPA
 {
-    public class NandNode : LogicNode
+    public class OrNode : LogicNode
     {
-        public NandNode()
+        public OrNode()
         {
 
         }
 
         protected override bool Calculate()
         {
+            if (values.Count == 2)
+            {
+                value = values[0] | values[1];
+                return true;
+            }
             return false;
-            // return !(value1 & value2);
         }
 
         public override Object Clone()
         {
-            return new NandNode();
+            return new OrNode();
         }
+
         public override String getKey()
         {
-            return "NAND";
+            return "OR";
         }
     }
 }
