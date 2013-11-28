@@ -14,6 +14,11 @@ namespace OOPA
 
         }
 
+        public override void DoAction(bool? newValue)
+        {
+            throw new NotImplementedException();
+        }
+
         public override Object Clone()
         {
             return new Input();

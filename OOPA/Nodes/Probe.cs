@@ -14,7 +14,12 @@ namespace OOPA
 
         public override void AddOutput(Node n)
         {
-            // niets
+            //TODO: Create visitor for AddOutput
+        }
+
+        public override void DoAction(bool? newValue)
+        {
+            throw new NotImplementedException();
         }
 
         public override Object Clone()
