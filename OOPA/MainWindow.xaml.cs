@@ -32,7 +32,7 @@ namespace OOPA
         }
 
 
-        private void InitializeView()
+        private static void InitializeView()
         {
             //TODO: Add initialization code for the view here...
         }
@@ -47,13 +47,15 @@ namespace OOPA
         /// <param name="routedEventArgs">The arguments of this event.</param>
         protected void OnOpenCircuitFile(object sender, RoutedEventArgs routedEventArgs)
         {
-            openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Open Circuit File";
-            openFileDialog.Filter = "Text Files Only (.txt)|*.txt";
-            openFileDialog.FilterIndex = 1;
-            openFileDialog.Multiselect = false;
+            openFileDialog = new OpenFileDialog
+            {
+                Title = @"Open Circuit File",
+                Filter = @"Text Files Only (.txt)|*.txt",
+                FilterIndex = 1,
+                Multiselect = false
+            };
 
-            DialogResult dialogResult = openFileDialog.ShowDialog();
+            var dialogResult = openFileDialog.ShowDialog();
             if (dialogResult == System.Windows.Forms.DialogResult.OK)
                 CircuitFileParser.Parse(openFileDialog.FileName);
         }

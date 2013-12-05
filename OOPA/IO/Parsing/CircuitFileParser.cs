@@ -15,6 +15,9 @@ namespace OOPA.IO.Parsing
 {
     /// <summary>
     /// Helps parsing Circuit Files to build a circuit.
+    /// 
+    /// TODO: Remove 'Console.Writeline' code.
+    /// TODO: Refactor code with ReSharper.
     /// </summary>
     public abstract class CircuitFileParser
     {
@@ -57,9 +60,7 @@ namespace OOPA.IO.Parsing
 
             ParseNodes(filePath, out parsedNodes, out parsedEdges);
 
-            var nodes = new Dictionary<string, Node>();
-            nodes = BuildNodes(parsedNodes);
-
+            var nodes = BuildNodes(parsedNodes);
             CoupleNodes(ref nodes, parsedEdges);
 
             return nodes;
@@ -79,7 +80,7 @@ namespace OOPA.IO.Parsing
                 var line = 0;
                 var nodeType = 0;
 
-                Console.WriteLine("Parsed Nodes");
+                Console.WriteLine(@"Parsed Nodes");
 
                 string currentLine;
                 while ((currentLine = streamReader.ReadLine()) != null)
@@ -93,7 +94,7 @@ namespace OOPA.IO.Parsing
 
                     if (string.IsNullOrEmpty(currentLine))
                     {
-                        Console.WriteLine("\nParsed Edges");
+                        Console.WriteLine(@"\nParsed Edges");
 
                         nodeType = 1;
                         continue;
@@ -133,44 +134,44 @@ namespace OOPA.IO.Parsing
             }
         }
 
-        private static Dictionary<string, Node> BuildNodes(List<string> parsedNodes)
+        private static Dictionary<string, Node> BuildNodes(IEnumerable<string> parsedNodes)
         {
             var nodes = new Dictionary<string, Node>();
 
-            for (int index = 0; index < parsedNodes.Count; index++)
+            foreach (var parsedNode in parsedNodes)
             {
-                var node = FactoryMethod<string, Node>.create(parsedNodes[index].Split(':')[1]);
-                nodes.Add(parsedNodes[index].Split(':')[0].ToLower(), node);
+                var node = FactoryMethod<string, Node>.create(parsedNode.Split(':')[1]);
+                nodes.Add(parsedNode.Split(':')[0].ToLower(), node);
             }
 
             return nodes;
         }
 
-        private static void CoupleNodes(ref Dictionary<string, Node> nodes, List<string> parsedEdges)
+        private static void CoupleNodes(ref Dictionary<string, Node> nodes, IEnumerable<string> parsedEdges)
         {
-            for (int index = 0; index < parsedEdges.Count; index++)
+            foreach (var parsedEdge in parsedEdges)
             {
                 const string METHOD_TAG = "CoupleNodes";
 
-                var currentNodeIndex = parsedEdges[index].Split(':')[0].ToLower();
-                var splitEdgeParameters = parsedEdges[index].Split(':')[1]
-                                                            .Split(',');
+                var currentNodeIndex = parsedEdge.Split(':')[0].ToLower();
+                var splitEdgeParameters = parsedEdge.Split(':')[1]
+                    .Split(',');
 
                 try
                 {
                     Node currentNode;
                     if (!nodes.TryGetValue(currentNodeIndex, out currentNode))
                         throw new CurrentNodeNotFoundException(CLASS_TAG, METHOD_TAG,
-                                                               "No 'current' node was found with the key '" + currentNodeIndex + "'!");
+                            "No 'current' node was found with the key '" + currentNodeIndex + "'!");
 
                     #region Couple Nodes Due Parsed Edge Data
 
-                    for (int parameterIndex = 0; parameterIndex < splitEdgeParameters.Length; parameterIndex++)
+                    foreach (var splitEdgeParameter in splitEdgeParameters)
                     {
                         Node coupleNode;
-                        if (!nodes.TryGetValue(splitEdgeParameters[parameterIndex].ToLower(), out coupleNode))
+                        if (!nodes.TryGetValue(splitEdgeParameter.ToLower(), out coupleNode))
                             throw new CoupleNodeNotFoundException(CLASS_TAG, METHOD_TAG,
-                                                                  "No 'couple' node was found with the key '" + splitEdgeParameters[parameterIndex] + "'!");
+                                "No 'couple' node was found with the key '" + splitEdgeParameter + "'!");
 
                         currentNode.AddOutput(coupleNode);
                     }
