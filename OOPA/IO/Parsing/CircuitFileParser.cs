@@ -45,7 +45,7 @@ namespace OOPA.IO.Parsing
         /// </summary>
         /// <param name="filePath">The full path of the file to parse.</param>
         /// <returns>Returns the built circuit, parsed from the file.</returns>
-        public Circuit Parse(string filePath)
+        public static Circuit Parse(string filePath)
         {
             const string METHOD_TAG = "Parse";
 
