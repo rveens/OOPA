@@ -15,9 +15,6 @@ namespace OOPA.IO.Parsing
 {
     /// <summary>
     /// Helps parsing Circuit Files to build a circuit.
-    /// 
-    /// TODO: Remove 'Console.Writeline' code.
-    /// TODO: Refactor code with ReSharper.
     /// </summary>
     public abstract class CircuitFileParser
     {
@@ -44,7 +41,7 @@ namespace OOPA.IO.Parsing
 
 
         /// <summary>
-        /// Parses a Circuit File and builds a Circuit based on the file's data.
+        /// Parses a Circuit file and builds a Circuit based on the file's data.
         /// </summary>
         /// <param name="filePath">The full path of the file to parse.</param>
         /// <returns>Returns the built circuit, parsed from the file.</returns>
@@ -67,6 +64,12 @@ namespace OOPA.IO.Parsing
         }
 
 
+        /// <summary>
+        /// Parses all nodes and edges from a Circuit file.
+        /// </summary>
+        /// <param name="filePath">The full path of the file to parse.</param>
+        /// <param name="parsedNodes">A list containing all data of the retrieved nodes from the file.</param>
+        /// <param name="parsedEdges">A list containing all data of the retrieved edges from the file.</param>
         private static void ParseNodes(string filePath, out List<string> parsedNodes, out List<string> parsedEdges)
         {
             const string METHOD_TAG = "ParseNodes";
@@ -134,6 +137,11 @@ namespace OOPA.IO.Parsing
             }
         }
 
+        /// <summary>
+        /// Builds all nodes due the retrieved nodes data from the Circuit File.
+        /// </summary>
+        /// <param name="parsedNodes">A list containing all data of the retrieved nodes from the Circuit file.</param>
+        /// <returns>A dictionary containing all built nodes out of the retrieved nodes data from the Circuit file.</returns>
         private static Dictionary<string, Node> BuildNodes(IEnumerable<string> parsedNodes)
         {
             var nodes = new Dictionary<string, Node>();
@@ -147,6 +155,11 @@ namespace OOPA.IO.Parsing
             return nodes;
         }
 
+        /// <summary>
+        /// Couples the built nodes with each other based on the outputs.
+        /// </summary>
+        /// <param name="nodes">The nodes built due the retrieved nodes data from the Circuit file.</param>
+        /// <param name="parsedEdges">The retrieved edges data from the file.</param>
         private static void CoupleNodes(ref Dictionary<string, Node> nodes, IEnumerable<string> parsedEdges)
         {
             foreach (var parsedEdge in parsedEdges)
