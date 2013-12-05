@@ -45,7 +45,7 @@ namespace OOPA.IO.Parsing
         /// </summary>
         /// <param name="filePath">The full path of the file to parse.</param>
         /// <returns>Returns the built circuit, parsed from the file.</returns>
-        public static Dictionary<string, Node> Parse(string filePath)
+        public Circuit Parse(string filePath)
         {
             const string METHOD_TAG = "Parse";
 
@@ -57,10 +57,11 @@ namespace OOPA.IO.Parsing
 
             ParseNodes(filePath, out parsedNodes, out parsedEdges);
 
-            var nodes = BuildNodes(parsedNodes);
+            Circuit c = new Circuit();
+            var nodes = BuildNodes(parsedNodes, new CircuitBindNodeVisitor(c));
             CoupleNodes(ref nodes, parsedEdges);
 
-            return nodes;
+            return c;
         }
 
 
@@ -142,13 +143,14 @@ namespace OOPA.IO.Parsing
         /// </summary>
         /// <param name="parsedNodes">A list containing all data of the retrieved nodes from the Circuit file.</param>
         /// <returns>A dictionary containing all built nodes out of the retrieved nodes data from the Circuit file.</returns>
-        private static Dictionary<string, Node> BuildNodes(IEnumerable<string> parsedNodes)
+        private static Dictionary<string, Node> BuildNodes(IEnumerable<string> parsedNodes, CircuitBindNodeVisitor cbnv)
         {
             var nodes = new Dictionary<string, Node>();
 
             foreach (var parsedNode in parsedNodes)
             {
                 var node = FactoryMethod<string, Node>.create(parsedNode.Split(':')[1]);
+                node.accept(cbnv);
                 nodes.Add(parsedNode.Split(':')[0].ToLower(), node);
             }
 
@@ -188,7 +190,6 @@ namespace OOPA.IO.Parsing
 
                         currentNode.AddOutput(coupleNode);
                     }
-
                     #endregion
                 }
                 catch (Exception exception)
