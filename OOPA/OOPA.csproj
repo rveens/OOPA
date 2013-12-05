@@ -55,6 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Circuit.cs" />
+    <Compile Include="CircuitBindNodeVisitor.cs" />
     <Compile Include="Factory\FactoryMethod.cs" />
     <Compile Include="Nodes\InputHigh.cs" />
     <Compile Include="Nodes\InputLow.cs" />
@@ -67,7 +68,7 @@
     <Compile Include="Nodes\XorNode.cs" />
     <Compile Include="IO\Parsing\Exceptions\CoupleNodeNotFoundException.cs" />
     <Compile Include="IO\Parsing\Exceptions\CurrentNodeNotFoundException.cs" />
-    <Compile Include="Visitor.cs" />
+    <Compile Include="NodeVisitor.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,7 +79,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Nodes\Input.cs" />
-    <Compile Include="LogicNode.cs" />
+    <Compile Include="Nodes\LogicNode.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

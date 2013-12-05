@@ -20,6 +20,11 @@ namespace OOPA
             visitor.visit(this);
         }
 
+        public bool? GetValue()
+        {
+            return value;
+        }
+
         public abstract Object Clone();
         public abstract String getKey();
         
