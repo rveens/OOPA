@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace OOPA
 {
@@ -14,9 +11,9 @@ namespace OOPA
 
         protected override bool Calculate()
         {
-            if (values.Count == 2)
+            if (inputValues.Count == 2)
             {
-                value = values[0] | values[1];
+                value = inputValues[0] | inputValues[1];
                 return true;
             }
             return false;

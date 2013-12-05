@@ -46,7 +46,7 @@
   <Class Name="OOPA.Probe">
     <Position X="4.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAAABAAAAAAAAAAIAAAAAAAAAAAAABA=</HashCode>
       <FileName>Nodes\Probe.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -60,7 +60,7 @@
   <Class Name="OOPA.LogicNode">
     <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAAACAAAABAAAAAAAAAAAAACAIACAAAAAAAAQAAAA=</HashCode>
+      <HashCode>AAgAAAAAAAABAAAAAAAAAAAAACAIAAAAAAAAAAwAAAA=</HashCode>
       <FileName>LogicNode.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -86,14 +86,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="OOPA.InputLow">
-    <Position X="2.5" Y="6" Width="1.5" />
+    <Position X="2.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Nodes\InputLow.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOPA.InputHigh">
-    <Position X="4.5" Y="6" Width="1.5" />
+    <Position X="4.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Nodes\InputHigh.cs</FileName>

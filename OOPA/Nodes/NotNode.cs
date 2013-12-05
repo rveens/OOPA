@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace OOPA
 {
@@ -14,7 +11,7 @@ namespace OOPA
 
         protected override bool Calculate()
         {
-            value = !this.values[0];
+            value = !this.inputValues[0];
             return true;
         }
 
