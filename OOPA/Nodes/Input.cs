@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 
 namespace OOPA
 {
-    public class Input : Node
+    public abstract class Input : Node
     {
         List<Node> outputs;
 
@@ -14,23 +15,20 @@ namespace OOPA
 
         public override void DoAction(bool? newValue)
         {
-            throw new NotImplementedException();
-        }
-
-        public override Object Clone()
-        {
-            return new Input();
-        }
-
-        public override string getKey()
-        {
-            return "INPUT";
+            value = newValue;
+            outputs.ForEach(startThread);
         }
 
         public override void AddOutput(Node n)
         {
             if (n != null)
                 this.outputs.Add(n);
+        }
+
+        private void startThread(Node node)
+        {
+            Thread thread = new Thread(() => node.DoAction(value));
+            thread.Start();
         }
     }
 }
