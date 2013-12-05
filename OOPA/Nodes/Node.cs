@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using OOPA.Factory;
 
 namespace OOPA
@@ -29,7 +26,7 @@ namespace OOPA
         public abstract String getKey();
         
         /* FIXME: methode synchronized maken */
-        public abstract void DoAction(bool? newValue);
+        public abstract void DoAction(bool? inputValue);
 
         public abstract void AddOutput(Node n);
     }
