@@ -13,5 +13,10 @@ namespace OOPA
         {
             return "INPUT_LOW";
         }
+
+        public override void DoAction(bool? newValue)
+        {
+            base.DoAction(false);
+        }
     }
 }
