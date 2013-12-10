@@ -14,7 +14,7 @@ using OOPA.Factory;
 namespace OOPA.IO.Parsing
 {
     /// <summary>
-    /// Helps parsing Circuit Files to build a circuit.
+    /// Helps parsing Circuit files to build a circuit.
     /// </summary>
     public abstract class CircuitFileParser
     {
@@ -97,7 +97,7 @@ namespace OOPA.IO.Parsing
 
                     if (string.IsNullOrEmpty(currentLine))
                     {
-                        Console.WriteLine(@"\nParsed Edges");
+                        Console.WriteLine(@"Parsed Edges");
 
                         nodeType = 1;
                         continue;
@@ -149,6 +149,7 @@ namespace OOPA.IO.Parsing
             foreach (var parsedNode in parsedNodes)
             {
                 var node = FactoryMethod<string, Node>.create(parsedNode.Split(':')[1]);
+
                 nodes.Add(parsedNode.Split(':')[0].ToLower(), node);
             }
 
@@ -168,7 +169,7 @@ namespace OOPA.IO.Parsing
 
                 var currentNodeIndex = parsedEdge.Split(':')[0].ToLower();
                 var splitEdgeParameters = parsedEdge.Split(':')[1]
-                    .Split(',');
+                                                    .Split(',');
 
                 try
                 {
