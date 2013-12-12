@@ -141,6 +141,7 @@ namespace OOPA.IO.Parsing
         /// Builds all nodes due the retrieved nodes data from the Circuit File.
         /// </summary>
         /// <param name="parsedNodes">A list containing all data of the retrieved nodes from the Circuit file.</param>
+        /// <param name="cbnv">The visitor used to bind the circuit nodes.</param>
         /// <returns>A dictionary containing all built nodes out of the retrieved nodes data from the Circuit file.</returns>
         private static Dictionary<string, Node> BuildNodes(IEnumerable<string> parsedNodes, CircuitBindNodeVisitor cbnv)
         {

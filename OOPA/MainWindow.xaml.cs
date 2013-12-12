@@ -1,5 +1,6 @@
 ﻿#region Using Statements
 
+using System.Threading;
 using System.Windows;
 using System.Windows.Forms;
 
@@ -60,6 +61,7 @@ namespace OOPA
             Circuit c = null;
             if (dialogResult == System.Windows.Forms.DialogResult.OK)
                 c = CircuitFileParser.Parse(openFileDialog.FileName);
+
             c.Start();
             c.PrintResults();
         }
