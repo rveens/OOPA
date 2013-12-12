@@ -24,11 +24,6 @@ namespace OOPA
             value = newValue;
         }
 
-        public string getResult()
-        {
-            return "Node <NAME> is " + value;
-        }
-
         public override Object Clone()
         {
             return new Probe();

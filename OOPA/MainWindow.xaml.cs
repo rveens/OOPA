@@ -56,8 +56,12 @@ namespace OOPA
             };
 
             var dialogResult = openFileDialog.ShowDialog();
+
+            Circuit c = null;
             if (dialogResult == System.Windows.Forms.DialogResult.OK)
-                CircuitFileParser.Parse(openFileDialog.FileName);
+                c = CircuitFileParser.Parse(openFileDialog.FileName);
+            c.Start();
+            c.PrintResults();
         }
 
         /// <summary>

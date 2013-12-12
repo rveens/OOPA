@@ -12,7 +12,7 @@ namespace OOPA
 
         protected LogicNode()
         {
-
+            inputValues = new List<bool?>();
         }
 
         public override void DoAction(bool? newValue)

@@ -24,7 +24,7 @@ namespace OOPA
         {
             foreach (Probe p in probes)
             {
-                Console.Out.WriteLine(p.GetValue());
+                Console.Out.WriteLine("Node " + p.getKey() + " is " + p.GetValue());
             }
         }
 

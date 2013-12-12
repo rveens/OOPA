@@ -13,7 +13,7 @@ namespace OOPA
         {
             if (inputValues.Count == 2)
             {
-                value = inputValues[1] & inputValues[2];
+                value = inputValues[0] & inputValues[1];
                 return true;
             }
             return false;
