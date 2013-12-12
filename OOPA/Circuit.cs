@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 
 namespace OOPA
@@ -16,8 +17,7 @@ namespace OOPA
 
         public void Start()
         {
-            foreach (Input i in inputs)
-                i.DoAction(true);
+            inputs.ForEach(startThread);
         }
 
         public void PrintResults()
@@ -36,6 +36,12 @@ namespace OOPA
         public void AddProbe(Probe pr)
         {
             probes.Add(pr);
+        }
+
+        private void startThread(Node node)
+        {
+            Thread thread = new Thread(() => node.DoAction(true));
+            thread.Start();
         }
     }
 

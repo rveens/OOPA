@@ -16,7 +16,12 @@ namespace OOPA
 
         public override void DoAction(bool? newValue)
         {
-            throw new NotImplementedException();
+            value = newValue;
+        }
+
+        public string getResult()
+        {
+            return "Node <NAME> is " + value;
         }
 
         public override Object Clone()
