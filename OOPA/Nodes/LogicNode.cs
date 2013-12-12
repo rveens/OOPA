@@ -22,6 +22,11 @@ namespace OOPA
                 outputs.ForEach(startThread);
         }
 
+        public override void accept(NodeVisitor visitor)
+        {
+            visitor.visit(this);
+        }
+
         public override void AddOutput(Node n)
         {
             if (n != null)

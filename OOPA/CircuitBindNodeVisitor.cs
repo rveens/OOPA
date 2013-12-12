@@ -15,7 +15,7 @@ namespace OOPA
             circuit = circ;
         }
 
-        public override void visit(Node node) { }
+        //public override void visit(Node node) { }
 
         public override void visit(LogicNode node) { }
 

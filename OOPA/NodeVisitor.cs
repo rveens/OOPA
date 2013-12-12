@@ -7,7 +7,7 @@ namespace OOPA
 {
     public class NodeVisitor
     {
-        public virtual void visit(Node node) { }
+        //public virtual void visit(Node node) { }
 
         public virtual void visit(LogicNode node) { }
         public virtual void visit(Input node) { }

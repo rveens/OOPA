@@ -12,10 +12,7 @@ namespace OOPA
 
         }
 
-        public void accept(NodeVisitor visitor)
-        {
-            visitor.visit(this);
-        }
+        public abstract void accept(NodeVisitor visitor);
 
         public bool? GetValue()
         {
