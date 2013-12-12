@@ -57,11 +57,12 @@ namespace OOPA.IO.Parsing
 
             ParseNodes(filePath, out parsedNodes, out parsedEdges);
 
-            Circuit c = new Circuit();
-            var nodes = BuildNodes(parsedNodes, new CircuitBindNodeVisitor(c));
+            var circuit = new Circuit();
+            var nodes = BuildNodes(parsedNodes, new CircuitBindNodeVisitor(circuit));
+
             CoupleNodes(ref nodes, parsedEdges);
 
-            return c;
+            return circuit;
         }
 
 
@@ -132,9 +133,7 @@ namespace OOPA.IO.Parsing
             }
             catch (Exception exception)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(exception.Message);
-                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 
@@ -195,9 +194,7 @@ namespace OOPA.IO.Parsing
                 }
                 catch (Exception exception)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(exception.Message);
-                    Console.ForegroundColor = ConsoleColor.White;
                 }
             }
         }
