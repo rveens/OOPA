@@ -10,6 +10,11 @@ namespace OOPA
         protected List<bool?> inputValues;
         protected int propegationDelay;
 
+        protected LogicNode()
+        {
+
+        }
+
         public override void DoAction(bool? newValue)
         {
             inputValues.Add(newValue);

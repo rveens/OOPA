@@ -60,7 +60,6 @@ namespace OOPA.Factory
                         if (constructorInfo[n].GetParameters().Length == 0)
                         {
                             TObject cObject = (TObject)constructorInfo[n].Invoke(null);
-
                             m_caObjectMap.Add(cObject.getKey(), cObject);
                         }
                     }

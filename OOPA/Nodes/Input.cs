@@ -8,7 +8,7 @@ namespace OOPA
     {
         List<Node> outputs;
 
-        public Input()
+        protected Input()
         {
             outputs = new List<Node>();
         }

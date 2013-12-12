@@ -7,7 +7,7 @@ namespace OOPA
     {
         protected bool? value;
 
-        public Node()
+        protected Node()
         {
 
         }
