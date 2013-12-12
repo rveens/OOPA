@@ -14,6 +14,11 @@ namespace OOPA
             //TODO: Create visitor for AddOutput
         }
 
+        public override void accept(NodeVisitor visitor)
+        {
+            visitor.visit(this);
+        }
+
         public override void DoAction(bool? newValue)
         {
             value = newValue;

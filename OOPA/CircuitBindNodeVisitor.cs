@@ -15,16 +15,16 @@ namespace OOPA
             circuit = circ;
         }
 
-        public virtual void visit(Node node) { }
+        //public override void visit(Node node) { }
 
-        public virtual void visit(LogicNode node) { }
+        public override void visit(LogicNode node) { }
 
-        public virtual void visit(Input node)
+        public override void visit(Input node)
         {
             circuit.AddInput(node);
         }
 
-        public virtual void visit(Probe node)
+        public override void visit(Probe node)
         {
             circuit.AddProbe(node);
         }

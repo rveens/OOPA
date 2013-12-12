@@ -7,15 +7,12 @@ namespace OOPA
     {
         protected bool? value;
 
-        public Node()
+        protected Node()
         {
 
         }
 
-        public void accept(NodeVisitor visitor)
-        {
-            visitor.visit(this);
-        }
+        public abstract void accept(NodeVisitor visitor);
 
         public bool? GetValue()
         {

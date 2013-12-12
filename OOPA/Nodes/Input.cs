@@ -8,7 +8,7 @@ namespace OOPA
     {
         List<Node> outputs;
 
-        public Input()
+        protected Input()
         {
             outputs = new List<Node>();
         }
@@ -17,6 +17,11 @@ namespace OOPA
         {
             value = newValue;
             outputs.ForEach(startThread);
+        }
+
+        public override void accept(NodeVisitor visitor)
+        {
+            visitor.visit(this);
         }
 
         public override void AddOutput(Node n)
