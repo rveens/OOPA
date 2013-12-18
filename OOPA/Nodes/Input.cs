@@ -30,12 +30,10 @@ namespace OOPA
                 this.outputs.Add(n);
         }
 
+        [STAThread]
         private void startThread(Node node)
         {
-            /* Thread thread = new Thread(() => node.DoAction(value));
-            thread.Start(); */
-
-            ThreadPool.QueueUserWorkItem(new WaitCallback(x => node.DoAction(value)));
+            ThreadManager.StartThread(() => node.DoAction(value));
         }
     }
 }

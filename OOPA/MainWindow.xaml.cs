@@ -18,6 +18,7 @@ namespace OOPA
     public partial class MainWindow
     {
         private OpenFileDialog openFileDialog;
+        private Circuit circuit;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
@@ -57,13 +58,14 @@ namespace OOPA
             };
 
             var dialogResult = openFileDialog.ShowDialog();
-
-            Circuit c = null;
             if (dialogResult == System.Windows.Forms.DialogResult.OK)
-                c = CircuitFileParser.Parse(openFileDialog.FileName);
+                circuit = CircuitFileParser.Parse(openFileDialog.FileName);
 
-            c.Start();
-            c.PrintResults();
+            ThreadManager.IsThreadsDone += PrintResults;
+
+            circuit.Start();
+
+            ThreadManager.StartWait();
         }
 
         /// <summary>
@@ -77,5 +79,10 @@ namespace OOPA
         }
 
         #endregion
+
+        protected void PrintResults()
+        {
+            circuit.PrintResults();
+        }
     }
 }

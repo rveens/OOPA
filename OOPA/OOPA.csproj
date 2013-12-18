@@ -69,6 +69,7 @@
     <Compile Include="IO\Parsing\Exceptions\CoupleNodeNotFoundException.cs" />
     <Compile Include="IO\Parsing\Exceptions\CurrentNodeNotFoundException.cs" />
     <Compile Include="NodeVisitor.cs" />
+    <Compile Include="ThreadManager.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
