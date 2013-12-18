@@ -28,11 +28,18 @@ namespace OOPA
         {
             //TODO: Fix NotSupportedException below (!)
 
-            WaitHandle[] events = resetEvents.ToArray();
-            WaitHandle.WaitAll(events);
+            try
+            {
+                WaitHandle[] events = resetEvents.ToArray();
+                WaitHandle.WaitAll(events);
 
-            if (IsThreadsDone != null)
-                IsThreadsDone();
+                if (IsThreadsDone != null)
+                    IsThreadsDone();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
         }
     }
 
