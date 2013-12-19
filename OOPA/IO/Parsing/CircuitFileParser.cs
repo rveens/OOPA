@@ -145,14 +145,31 @@ namespace OOPA.IO.Parsing
         /// <returns>A dictionary containing all built nodes out of the retrieved nodes data from the Circuit file.</returns>
         private static Dictionary<string, Node> BuildNodes(IEnumerable<string> parsedNodes, CircuitBindNodeVisitor cbnv)
         {
-            var nodes = new Dictionary<string, Node>();
+            const string METHOD_TAG = "BuildNodes";
 
-            foreach (var parsedNode in parsedNodes)
+            var nodes = new Dictionary<string, Node>();
+            Node node = null;
+
+            try
             {
-                var node = FactoryMethod<string, Node>.create(parsedNode.Split(':')[1]);
                 
-				node.accept(cbnv);
-                nodes.Add(parsedNode.Split(':')[0].ToLower(), node);
+                foreach (var parsedNode in parsedNodes)
+                {
+                    node = FactoryMethod<string, Node>.create(parsedNode.Split(':')[1]);
+
+                    node.accept(cbnv);
+                    nodes.Add(parsedNode.Split(':')[0].ToLower(), node);
+                }
+            }
+            catch (Exception)
+            {
+                if (node != null)
+                {
+                    throw new CurrentNodeNotFoundException(CLASS_TAG, METHOD_TAG,
+                        "Unexpected value for node '" + node.GetType() + "' received.");
+                }
+                    
+                Console.WriteLine(@"Unexpected value for node found!");
             }
 
             return nodes;
