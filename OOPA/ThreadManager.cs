@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace OOPA
@@ -13,22 +12,13 @@ namespace OOPA
 
         public static void StartThread(Action method)
         {
-            var task = Task.Factory.StartNew(() => method() );
-
-            ThreadPool.QueueUserWorkItem(
-            x =>
-            {
-                method();
-            });
-
+            var task = Task.Factory.StartNew(method);
             tasks.Add(task);
         }
 
         public static void StartWait()
         {
-            //TODO: Fix NotSupportedException below (!)
-
-            Task[] tempTaskArray = tasks.ToArray();
+            var tempTaskArray = tasks.ToArray();
             Task.WaitAll(tempTaskArray);
 
             if (IsThreadsDone != null)

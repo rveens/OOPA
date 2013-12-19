@@ -38,8 +38,7 @@ namespace OOPA
             probes.Add(pr);
         }
 
-        [STAThread]
-        private void startThread(Node node)
+        private static void startThread(Node node)
         {
             ThreadManager.StartThread(() => node.DoAction(true));
         }
