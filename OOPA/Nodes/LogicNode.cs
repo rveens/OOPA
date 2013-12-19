@@ -10,7 +10,7 @@ namespace OOPA
         protected List<bool?> inputValues;
         protected int propegationDelay;
 
-        private object lockObject = new object();
+        private readonly object lockObject = new object();
 
         protected LogicNode()
         {

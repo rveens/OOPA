@@ -22,6 +22,7 @@ namespace OOPA
         public override void DoAction(bool? newValue)
         {
             value = newValue;
+            Console.WriteLine(this.GetType() + " " + this.value);
         }
 
         public override Object Clone()
