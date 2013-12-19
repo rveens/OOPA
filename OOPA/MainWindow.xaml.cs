@@ -65,7 +65,7 @@ namespace OOPA
 
             circuit.Start();
 
-            ThreadManager.StartWait();
+            //ThreadManager.StartWait();
         }
 
         /// <summary>

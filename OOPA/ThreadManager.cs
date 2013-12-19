@@ -16,14 +16,14 @@ namespace OOPA
             tasks.Add(task);
         }
 
-        public static void StartWait()
-        {
-            var tempTaskArray = tasks.ToArray();
-            Task.WaitAll(tempTaskArray);
+        //public static void StartWait()
+        //{
+        //    var tempTaskArray = tasks.ToArray();
+        //    Task.WaitAll(tempTaskArray);
 
-            if (IsThreadsDone != null)
-                IsThreadsDone();
-        }
+        //    if (IsThreadsDone != null)
+        //        IsThreadsDone();
+        //}
     }
 
     public delegate void IsThreadsDoneHandler();
