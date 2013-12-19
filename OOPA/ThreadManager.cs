@@ -1,45 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace OOPA
 {
     public abstract class ThreadManager
     {
         public static event IsThreadsDoneHandler IsThreadsDone;
-        
-        private readonly static List<ManualResetEvent> resetEvents = new List<ManualResetEvent>();
+
+        private readonly static List<Task> tasks = new List<Task>();
 
         public static void StartThread(Action method)
         {
-            var resetEvent = new ManualResetEvent(false);
+            var task = Task.Factory.StartNew(() => method() );
 
             ThreadPool.QueueUserWorkItem(
             x =>
             {
                 method();
-                resetEvent.Set();
             });
 
-            resetEvents.Add(resetEvent);
+            tasks.Add(task);
         }
 
         public static void StartWait()
         {
             //TODO: Fix NotSupportedException below (!)
 
-            try
-            {
-                WaitHandle[] events = resetEvents.ToArray();
-                WaitHandle.WaitAll(events);
+            Task[] tempTaskArray = tasks.ToArray();
+            Task.WaitAll(tempTaskArray);
 
-                if (IsThreadsDone != null)
-                    IsThreadsDone();
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-            }
+            if (IsThreadsDone != null)
+                IsThreadsDone();
         }
     }
 

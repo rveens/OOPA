@@ -10,6 +10,8 @@ namespace OOPA
         protected List<bool?> inputValues;
         protected int propegationDelay;
 
+        private object lockObject = new object();
+
         protected LogicNode()
         {
             inputValues = new List<bool?>();
@@ -17,9 +19,12 @@ namespace OOPA
 
         public override void DoAction(bool? newValue)
         {
-            inputValues.Add(newValue);
-            if (Calculate())
-                outputs.ForEach(startThread);
+            lock (lockObject)
+            {
+                inputValues.Add(newValue);
+                if (Calculate())
+                    outputs.ForEach(startThread);
+            }
         }
 
         public override void accept(NodeVisitor visitor)
@@ -35,7 +40,6 @@ namespace OOPA
 
         protected abstract bool Calculate();
 
-        [STAThread]
         private void startThread(Node node)
         {
             ThreadManager.StartThread(() => node.DoAction(value));

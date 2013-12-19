@@ -30,7 +30,6 @@ namespace OOPA
                 this.outputs.Add(n);
         }
 
-        [STAThread]
         private void startThread(Node node)
         {
             ThreadManager.StartThread(() => node.DoAction(value));
